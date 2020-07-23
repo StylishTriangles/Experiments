@@ -11,9 +11,9 @@ all:
 	$(CC) -o build/main_o2.o main.cpp -c -O2
 	$(CC) -o build/app_o2.out build/main_o2.o build/switches_o2.o -O2
 	#
-	$(CC) -o build/switches_o3.o switches.cpp -c -O3
-	$(CC) -o build/main_o3.o main.cpp -c -O3
-	$(CC) -o build/app_o3.out build/main_o3.o build/switches_o3.o -O3
+	$(CC) -o build/switches_o3.o switches.cpp -c -Os
+	$(CC) -o build/main_o3.o main.cpp -c -Os
+	$(CC) -o build/app_o3.out build/main_o3.o build/switches_o3.o -Os
 	#
 	$(CC) -o build/switches_uber.o switches.cpp -c -O3 -flto -fuse-linker-plugin -march=native
 	$(CC) -o build/main_uber.o main.cpp -c -O3 -flto -fuse-linker-plugin -march=native
