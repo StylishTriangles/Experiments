@@ -55,6 +55,10 @@ int main() {
     char* a_c[t_count];
     char* b_c[t_count];
     char* c_c[t_count];
+
+    printf("Characters in string: %d, string count per test: %d\n\n", t_size, t_count);
+    printf("Generating random datasets... ");
+    fflush(stdout);
     for (int i = 0; i < t_count; i++) {
         a[i] = random_string(t_size, "abcdefghijklmnopqrstuvwxyz");
         b[i] = random_string(t_size, "12345!@# abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQR"); // half affected
@@ -65,7 +69,7 @@ int main() {
         b_c[i] = &b[i][0];
         c_c[i] = &c[i][0];
     }
-    printf("Characters in string: %d, string count per test: %d\n\n", t_size, t_count);
+    printf("done\n");
 
     benchmark(a, to_upper_inline, "a", "to_upper_inline");
     benchmark(b, to_upper_inline, "b", "to_upper_inline");
